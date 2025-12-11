@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+    }
+    h2 {
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .section {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #555;
+      font-size: 13px;
+    }
+    input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #0052cc;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+      display: none;
+    }
+    .status.success {
+      background: #e6f4ea;
+      color: #1e7e34;
+      display: block;
+    }
+    .status.error {
+      background: #fce8e6;
+      color: #c5221f;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2>🤖 AI Assistant Settings</h2>
+  
+  <div class="section">
+    <label for="apiKey">OpenAI API Key:</label>
+    <input type="password" id="apiKey" placeholder="sk-...">
+  </div>
+
+  <div class="section">
+    <label for="outputMode">Output Mode:</label>
+    <select id="outputMode">
+      <option value="both">Side Panel + Clipboard</option>
+      <option value="sidepanel">Side Panel Only</option>
+      <option value="clipboard">Clipboard Only</option>
+    </select>
+  </div>
+
+  <button id="save">Save Settings</button>
+  
+  <div id="status" class="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
